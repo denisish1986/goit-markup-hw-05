@@ -3,6 +3,9 @@
 /* Цвет акцента #2196F3 */
 
 :root {
+  --background-modal-window: rgba(0, 0, 0, 0.2);
+  --modal-window-color: #ffff;
+  --backdrop-hero-color: rgba(0, 0, 0, 0.2);
   --portfolio-background-stikker: rgba(33, 150, 243, 0.9);
   --background-specifications-description: rgba(47, 48, 58, 0.8);
   --rgba-color-for-tel-mail: rgba(255, 255, 255, 0.6);
@@ -110,7 +113,7 @@ header {
   line-height: 1.142;
   letter-spacing: 0.02em;
   color: var(--titel-text-color);
-
+  transition-property: var(--titel-text-color);
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -121,7 +124,7 @@ header {
 
 .current::after {
   position: absolute;
-  right: 0;
+  right: 0%;
   top: 100%;
 
   content: '';
@@ -130,7 +133,27 @@ header {
   height: 4px;
   border-radius: 4px;
   background-color: var(--accent-text-color);
+
+  transition-property: var(--accent-text-color);
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
+.current:hover.current::after {
+  transform: scale(1.25);
+}
+/* @keyframes current {
+  0% {
+    transform: scale(2);
+  }
+
+  50% {
+    transform: scale(2);
+  }
+
+  100% {
+    transform: scale(2);
+  }
+} */
 
 .page-nav {
   display: flex;
@@ -169,13 +192,14 @@ header {
   line-height: 1.143;
   letter-spacing: 0.02em;
   color: var(--primary-text-color);
-
+  transition-property: var(--primary-text-color);
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .button-smartphone-link:hover,
 .button-mail-link:hover {
   color: var(--accent-text-color);
+  transform: scale(1.5, 1.5);
 }
 .mail-link-svg,
 .smartphone-link-svg {
@@ -200,8 +224,9 @@ header {
 /* BACKDROP + MODAL WINDOW */
 
 .is-hidden {
-  visibility: hidden !important;
+  visibility: hidden;
 }
+
 .backdrop {
   display: flex;
   justify-content: center;
@@ -210,10 +235,7 @@ header {
   left: 0%;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.2);
-  opacity: 1;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  background: var(--backdrop-hero-color);
 }
 
 .modal-window {
@@ -223,27 +245,29 @@ header {
   transform: translate(-50%, -50%) scale(0.9);
   width: 528px;
   height: 581px;
-  background-color: white;
+  background-color: var(--modal-window-color);
+  /* pointer-events: none; */
 }
 
-.button-modal-close {
+.button-close {
   display: flex;
   justify-content: center;
   align-items: center;
   position: absolute;
-  top: 6px;
+  top: 8px;
   right: 8px;
-  padding: 0;
+  padding: 0px;
   width: 30px;
   height: 30px;
   border-radius: 50%;
+  background-color: var(--sometimes-white-text-color);
   border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .cross-svg {
-  display: inline-flex;
-  width: 16px;
-  height: 16px;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
 }
 .section-hero {
   justify-content: center;
@@ -293,7 +317,7 @@ header {
   border-style: none;
   border-style: none;
 }
-.hero-button {
+.button-hero {
   display: inline-block;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
@@ -308,12 +332,13 @@ header {
   line-height: 1.875;
   color: var(--sometimes-white-text-color);
   background-color: var(--accent-text-color);
-
+  transition-property: var(--sometimes-white-text-color);
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .hero-button:hover,
 .hero-button:focus {
+  cursor: pointer;
   color: var(--titel-text-color);
 }
 /* END BUTTON IN SECTION HERO */
@@ -594,7 +619,7 @@ header {
   width: 79px;
   height: 52px;
   fill: var(--costumers-color);
-
+  transition-property: var(--costumers-color);
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -708,31 +733,34 @@ header {
   display: inline-flex;
   margin-top: 20px;
 }
-
+.sosiaal-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.footer-link-svg {
+  width: 20px;
+  height: 20px;
+}
+.sosiaal-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.1);
+  transition-property: rgba(255, 255, 255, 0.1);
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
 .sosiaal-item:not(:last-child) {
   margin-right: 10px;
 }
 .sosiaal-item:hover {
   background-color: var(--accent-text-color);
 }
-.sosiaal-link {
-  display: flex;
-  align-items: center;
-}
-.sosiaal-item {
-  display: flex;
-  justify-content: center;
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.1);
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-}
-.footer-link-svg {
-  width: 20px;
-  height: 20px;
-}
+
 /* --------------- PORTFOLIO --------------- */
 
 /* HEADER IS THE SAME AS ON MAIN PAGE */
@@ -763,7 +791,7 @@ header {
 
   border-radius: 4px;
   text-align: center;
-  min-width: 125px;
+  width: 145px;
   padding: 6px 22px;
   font-family: inherit;
   font-weight: 500;
@@ -772,7 +800,7 @@ header {
   letter-spacing: 0.03em;
   background-color: var(--button-background-color);
   color: var(--titel-text-color);
-
+  transition-property: var(--button-background-color), var(--titel-text-color);
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -823,6 +851,10 @@ header {
   outline: border 1px;
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
+  transition-property: 0px 1px 1px rgba(0, 0, 0, 0.12),
+    0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .description-item {
@@ -854,6 +886,7 @@ header {
   width: 370px;
   height: 294px;
   background-color: var(--portfolio-background-stikker);
+  transition-property: var(--portfolio-background-stikker);
   transform: translateY(100%);
   transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
