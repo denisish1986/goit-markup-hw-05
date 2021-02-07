@@ -708,6 +708,9 @@ header {
 .footer-contacts-mail:hover,
 .footer-contacts-mail:focus {
   color: var(--accent-text-color);
+  transition-property: var(--accent-text-color);
+  transition-duration: 250ms;
+  transition-timing-function: var(--timing-function);
 }
 .footer-contacts-mail {
   font-weight: 400;
@@ -727,6 +730,9 @@ header {
 .footer-contacts-tel:hover,
 .footer-contacts-tel:focus {
   color: var(--accent-text-color);
+  transition-property: var(--accent-text-color);
+  transition-duration: 250ms;
+  transition-timing-function: var(--timing-function);
 }
 
 /*FOOTER SOSIAAL LINKS ПРИСОЕДИНЯЙТЕСЬ */
