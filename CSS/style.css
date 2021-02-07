@@ -51,7 +51,6 @@ body {
   text-decoration: none;
 }
 .container {
-  position: relative;
   width: 1200px;
   margin-right: auto;
   margin-left: auto;
@@ -71,6 +70,7 @@ header {
 }
 .header-navigation {
   display: flex;
+  align-items: center;
 }
 
 /* HEADER LOGO WEBSTUDIO */
@@ -107,7 +107,6 @@ header {
   display: block;
   padding-top: 32px;
   padding-bottom: 32px;
-  height: 32px;
 
   font-weight: 500;
   font-size: 14px;
@@ -157,6 +156,7 @@ header {
 } */
 
 .page-nav {
+  align-items: center;
   display: flex;
   padding: 0px;
   margin-left: 93px;
