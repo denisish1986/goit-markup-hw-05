@@ -637,7 +637,8 @@ header {
   border: 1px solid #afb1b8;
   border-radius: 4px;
   fill: var(--costumers-color);
-  transition: fill var(--transition-duration) var(--transition-timing-function);
+  transition: fill var(--transition-duration) var(--transition-timing-function),
+    border var(--transition-duration) var(--transition-timing-function);
 }
 
 .costumers-button:hover,
